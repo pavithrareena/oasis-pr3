@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* custom font from google fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+/* Basic styling and positioning of elements */
+body {  font-size:16px;}
+#some-box {background:#fff;padding:40px 0px 80px;font-family:'Open Sans', sans-serif;}
+#some-box h1 {text-align:center; font-size: 130px; background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+ width: 1376px; margin-left: 22px;}
+#some-box h3 {font-size:26px;}
+#some-box a {color:#70BCB8;text-decoration:none;display:block;font-weight:bold;}
+#some-box a:hover {color:#8E7BB2;}
+
+article.row {width:100%;max-width:1370px;margin:0 auto;padding:45px 0;}
+article.row div {width:49.4%;display:inline-block;position:relative;border:1px solid white;}
+
+/**** For your reference ****/
+article.row {border:1px solid white;}
+article.row:hover {box-shadow: rgba(212, 10, 10, 0.25) 0px 50px 100px -20px, rgb(187, 1, 1) 0px 30px 60px -30px, rgba(161, 24, 24, 0.35) 0px -2px 6px 0px inset;}
+article.row div:hover 
+/* Your divs won't expand to contain absolute positioned images */
+
+
+#idea-one img, #idea-two img, #idea-three img {position:absolute;bottom:-20px;left:90px;}
+
+/* Here's the column repositioning magic. This media query says "Apply these styles only until page width is greater than 750px" 
+
+***To make this work, your media query has to be beneath your other styles to keep it from being overwritten later on by your general styles*** */
+@media(max-width:1370px){
+
+  /* This resizes the divs that contain your content to fill the width of the page so that they stack vertically */
+  article.row div {min-width:300px;width:90%;margin:0 5%;text-align:center;display:block;}
+  
+  /* Center your text */
+	#some-other-box h3 {text-align:center;}
+
+  /* Center your image */
+	 #idea-two img, #idea-three img {position:relative;margin:auto; border: 2px solid black;
+        margin-left: 20px;left:inherit;bottom:inherit; }
+        #idea-one img{
+            margin-left: 120px; position: relative
+            ;
+        }
+
+  /* This tells the browswer to stack the content vertically */
+  #idea-two {display:-webkit-box;display:-moz-box;display:box;-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;}
+  
+  /* This tells the browswer to draw the first box (div:first-of-type) within our stacked content block (identified in the previous rule) in the second position ([...]box-ordinal-group:2;)
+  This gives us a nice arrangement of alternating text and images, and allows us two have a custom layout for smaller or wider screens.*/
+	#idea-two div:first-of-type {-webkit-box-ordinal-group:2;-moz-box-ordinal-group:2;box-ordinal-group:2;}
+}
+
+  /*
+If we had 3 boxes, we could draw them in order C, A, B by writing div:first-of-type{[...]group:2;} and div:nth-of-type(2) {[...]group:3;}, and so on.
+  */
+
+  #some-box h1{
+    box-shadow: 3px;
+    color: rgba(0, 0, 0, 0.89);
+  }
+  .aa{
+    height: 25px;
+    width: 1370px;
+    color: black;
+    background-color: black;
+  }
+  .ab{
+    height: 20px;
+    width: 1370px;
+    color: black;
+    background-color: black;
+  }
+  .aaa{
+    height: 15px;
+    color: black; width: 1370px;
+    background-color: black;
+  }
+  .aaaa{
+    height: 10px;
+    color: black; width: 1370px;
+    background-color: black;
+  }.aaaaa{
+    height: 5px;
+    color: black;width: 1370px;
+    background-color: black;
+  }
+  .aaaaaa{
+    height: 1px;
+    width: 1370px;
+    color: black;
+    background-color: black;
+  }
+
+</style>
+
+<body>
+    <hr class="aa">
+    <hr class="ab">
+    <hr class="aaa">
+    <hr class="aaaa">
+    <hr class="aaaaa">
+    <hr class="aaaaa">
+
+    <div id="some-box">
+        <h1>MUSIC UNIVERSE</h1>
+      
+     
+          <br><br><br>
+      
+          <article class="row" id="idea-two">
+              <div>
+                <h3>Get Stress Out in One Website</h3>
+                <p>Be careful not to let your text sections become too wordy, however; if you write too much your users may choose not to read the content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, delectus! <a href="#">Link to read more Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad similique ipsa accusamus quidem sequi eius excepturi? Blanditiis repellat placeat accusantium aperiam culpa quo, cumque nobis praesentium impedit perspiciatis, magni maiores, porro quos obcaecati voluptatibus omnis voluptas? Perspiciatis animi sunt possimus.</a></p>
+              
+              </div>
+              <div><img src="a3 (2).jpeg"height="250px" width="250px" ></div>
+          </article>
+      
+          <br><br><br>
+          <article class="row" id="idea-three">
+              <div><img src="a3 (3).jpeg" height="250px" width="250px"></div>
+              <div>
+                <h3>Discover New Music Trends</h3>
+                <p>Stay up-to-date with the latest music trends and explore new genres and artists. Our website provides a platform to discover emerging talents and cutting-edge sounds. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non eum laudanti</a></p>
+              
+                  <a href="#">Link to read more um, voluptates excepturi accusantium quia, sint vel, corrupti officia doloremque neque eius nemo nobis? Atque sequi dolores ad deserunt officiis quia culpa quam? Reprehenderit veniam a accusamus esse laborum rerum! <a href="#">Link to read more</a>
+              </div>
+          </article>
+      
+      </div>
+    
+</body>
+</html>
